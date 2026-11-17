@@ -1,0 +1,1139 @@
+/* =========================================
+   VARAD HOSPITAL MS
+   Global Theme and Layout
+   ========================================= */
+
+/* ===== Global Theme ===== */
+
+:root {
+  --brand-deep: #0f4c6b;
+  --brand-blue: #1f7a9a;
+  --brand-teal: #2fa39a;
+  --brand-orange: #f09a3e;
+  --brand-green: #5aa832;
+
+  --page: #f4f8fb;
+  --surface: #ffffff;
+  --line: #e6edf2;
+  --ink: #14283a;
+  --muted: #6b7c8d;
+
+  --radius: 16px;
+  --shadow: 0 8px 24px rgba(15, 76, 107, 0.06);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--page);
+  color: var(--ink);
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hospital-layout {
+  width: 100%;
+  max-width: 1400px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: var(--page);
+}
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+
+.hospital-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  width: 100%;
+  min-height: 78px;
+  padding: 12px 26px;
+
+  background: #ffffff;
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 3px 16px rgba(15, 76, 107, 0.04);
+}
+
+/* Navbar brand */
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.navbar-brand-area {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+
+.hospital-brand-icon {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 44px;
+  height: 44px;
+
+  color: #ffffff;
+  background: linear-gradient(135deg, #0f4c6b, #1f7a9a);
+  border-radius: 13px;
+  box-shadow: 0 5px 12px rgba(31, 122, 154, 0.2);
+}
+
+.hospital-brand-icon > i {
+  font-size: 25px;
+}
+
+.brand-plus {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+
+  color: #ffffff;
+  background: var(--brand-teal);
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hospital-brand-text h5 {
+  margin: 0;
+  color: var(--brand-deep);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.hospital-brand-text span {
+  display: block;
+  margin-top: 3px;
+
+  color: var(--brand-teal);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Navbar search */
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  flex: 1;
+
+  width: 100%;
+  min-width: 180px;
+  max-width: 490px;
+  height: 44px;
+  padding: 0 14px;
+
+  color: var(--brand-blue);
+  background: var(--page);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.navbar-search:focus-within {
+  background: #ffffff;
+  border-color: var(--brand-teal);
+  box-shadow: 0 0 0 3px rgba(47, 163, 154, 0.12);
+}
+
+.navbar-search > i {
+  flex-shrink: 0;
+  font-size: 17px;
+}
+
+.navbar-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  outline: none;
+
+  font: inherit;
+  font-size: 12px;
+}
+
+.navbar-search input::placeholder {
+  color: #8a9bab;
+}
+
+.search-shortcut {
+  flex-shrink: 0;
+  padding: 4px 7px;
+
+  color: var(--muted);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+
+  font-size: 10px;
+}
+
+/* Navbar actions */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+}
+
+.navbar-icon-btn {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 39px;
+  height: 39px;
+
+  color: var(--brand-deep);
+  background: transparent;
+  border: none;
+  border-radius: 11px;
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.navbar-icon-btn > i {
+  font-size: 18px;
+}
+
+.navbar-icon-btn:hover {
+  color: #ffffff;
+  background: var(--brand-blue);
+  transform: translateY(-1px);
+}
+
+.notification-badge {
+  position: absolute;
+  top: 1px;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+
+  color: #ffffff;
+  background: var(--brand-orange);
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.navbar-divider {
+  width: 1px;
+  height: 30px;
+  margin: 0 4px;
+  background: var(--line);
+}
+
+/* Administrator profile */
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+
+  margin-left: 5px;
+  padding: 5px 8px;
+
+  text-align: left;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.navbar-profile:hover {
+  background: var(--page);
+}
+
+.profile-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 39px;
+  height: 39px;
+
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--brand-teal), var(--brand-blue));
+  border: 2px solid #d9f3ee;
+  border-radius: 50%;
+}
+
+.profile-avatar i {
+  font-size: 20px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.profile-info strong {
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.profile-info span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.profile-chevron {
+  margin-left: 5px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* Mobile menu button */
+
+.navbar-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 38px;
+  height: 38px;
+
+  color: var(--brand-deep);
+  background: var(--page);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.navbar-menu-btn i {
+  font-size: 22px;
+}
+
+/* =========================================
+   MAIN LAYOUT
+   ========================================= */
+
+.hospital-body {
+  display: flex;
+  align-items: stretch;
+
+  width: 100%;
+  min-width: 0;
+  min-height: calc(100vh - 78px);
+}
+
+/* =========================================
+   SIDEBAR
+   ========================================= */
+
+.hospital-sidebar {
+  position: sticky;
+  top: 78px;
+
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 250px;
+
+  width: 250px;
+  min-width: 250px;
+  height: calc(100vh - 78px);
+  padding: 24px 12px 16px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+  color: var(--ink);
+  border-right: 1px solid var(--line);
+
+  scrollbar-width: thin;
+  scrollbar-color: #d5e3ec transparent;
+}
+
+/* Sidebar heading */
+
+.sidebar-heading {
+  margin: 0 12px 16px;
+
+  color: #8a9bab;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Sidebar navigation */
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.sidebar-link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+
+  color: #1f4e79;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Hover changes text and icon color only */
+
+.sidebar-link:hover {
+  color: var(--brand-teal);
+  background: transparent;
+  border-color: transparent;
+}
+
+/* Active link has no background */
+
+.sidebar-link.active {
+  color: #168f87;
+  background: transparent;
+  border-color: transparent;
+  font-weight: 700;
+  box-shadow: none;
+}
+
+.sidebar-link.active:hover {
+  color: #0f766e;
+  background: transparent;
+}
+
+.sidebar-link::before {
+  display: none;
+  content: none;
+}
+
+/* Sidebar icon wrapper */
+
+.sidebar-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 22px;
+
+  width: 22px;
+  height: 22px;
+
+  background: transparent;
+  border-radius: 0;
+}
+
+.sidebar-icon {
+  font-size: 17px;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+/* Colorful sidebar icons */
+
+.sidebar-icon-wrap.blue .sidebar-icon {
+  color: #0879c9;
+}
+
+.sidebar-icon-wrap.teal .sidebar-icon {
+  color: var(--brand-teal);
+}
+
+.sidebar-icon-wrap.green .sidebar-icon {
+  color: var(--brand-green);
+}
+
+.sidebar-icon-wrap.orange .sidebar-icon {
+  color: var(--brand-orange);
+}
+
+.sidebar-link.active .sidebar-icon {
+  color: #168f87;
+}
+
+/* Navigation labels */
+
+.sidebar-link-label {
+  flex: 1;
+  min-width: 0;
+
+  color: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.sidebar-link.active .sidebar-link-label {
+  font-weight: 700;
+}
+
+/* Navigation badge */
+
+.sidebar-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 21px;
+  height: 21px;
+  padding: 0 6px;
+
+  color: #ffffff;
+  background: var(--brand-orange);
+  border-radius: 20px;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* Sidebar arrow */
+
+.sidebar-arrow {
+  color: #b0bdc9;
+  font-size: 11px;
+  opacity: 0;
+  transform: translateX(-3px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sidebar-link:hover .sidebar-arrow,
+.sidebar-link.active .sidebar-arrow {
+  color: var(--brand-teal);
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* =========================================
+   SIDEBAR BOTTOM
+   ========================================= */
+
+.sidebar-bottom {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+/* Need Help - dark blue gradient */
+
+.sidebar-help-card {
+  position: relative;
+  overflow: hidden;
+
+  margin: 0 0 14px;
+  padding: 18px 14px;
+
+  color: #ffffff;
+  background: linear-gradient(145deg, #071b33 0%, #0f4c6b 65%, #1f7a9a 100%);
+
+  border: 1px solid var(--brand-blue);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(7, 27, 51, 0.18);
+}
+
+/* Help icon */
+
+.sidebar-help-icon {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+  margin-bottom: 12px;
+
+  color: #5bd5cc;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+
+  font-size: 21px;
+}
+
+/* Help content */
+
+.sidebar-help-content {
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar-help-content strong {
+  display: block;
+  margin-bottom: 6px;
+
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.sidebar-help-content p {
+  margin: 0 0 14px;
+
+  color: #d0e3ef;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Contact support button */
+
+.sidebar-support-btn {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: 100%;
+  padding: 10px 12px;
+
+  color: var(--brand-deep);
+  background: #ffffff;
+  border: none;
+  border-radius: 9px;
+
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.sidebar-support-btn:hover {
+  color: #ffffff;
+  background: var(--brand-orange);
+  transform: translateY(-1px);
+}
+
+/* Decorative circles */
+
+.support-decoration {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.support-decoration-one {
+  top: -25px;
+  right: -20px;
+
+  width: 85px;
+  height: 85px;
+
+  background: rgba(47, 163, 154, 0.18);
+}
+
+.support-decoration-two {
+  right: 25px;
+  bottom: -35px;
+
+  width: 70px;
+  height: 70px;
+
+  background: rgba(53, 167, 255, 0.13);
+}
+
+/* Sidebar version */
+
+.sidebar-version {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  padding: 13px 5px 0;
+
+  color: #8a9bab;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+}
+
+.sidebar-version span {
+  color: var(--brand-teal);
+  font-weight: 700;
+}
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+
+.hospital-content {
+  flex: 1;
+  min-width: 0;
+  padding: 30px;
+  overflow-x: auto;
+}
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+.hospital-layout button:focus-visible,
+.hospital-layout a:focus-visible,
+.sidebar-link:focus-visible {
+  outline: 3px solid rgba(47, 163, 154, 0.4);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   TABLET: 769px - 1000px
+   ========================================= */
+
+@media (max-width: 1000px) {
+  .hospital-navbar {
+    gap: 12px;
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .navbar-search {
+    min-width: 120px;
+    max-width: 360px;
+  }
+
+  .navbar-actions {
+    gap: 5px;
+  }
+
+  .search-shortcut,
+  .theme-toggle {
+    display: none;
+  }
+
+  .profile-info {
+    display: none;
+  }
+
+  .hospital-sidebar {
+    flex-basis: 220px;
+    width: 220px;
+    min-width: 220px;
+  }
+
+  .hospital-content {
+    padding: 22px;
+  }
+}
+
+/* =========================================
+   MOBILE: 768px AND BELOW
+   ========================================= */
+
+@media (max-width: 768px) {
+  /* Navbar */
+
+  .hospital-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1200;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "left actions"
+      "search search";
+
+    gap: 10px;
+    min-height: 0;
+    padding: 12px 16px;
+
+    background: #ffffff;
+  }
+
+  .navbar-left {
+    grid-area: left;
+    min-width: 0;
+    gap: 9px;
+  }
+
+  .navbar-menu-btn {
+    display: flex;
+  }
+
+  .navbar-brand-area {
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .hospital-brand-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hospital-brand-icon > i {
+    font-size: 21px;
+  }
+
+  .hospital-brand-text h5 {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .hospital-brand-text span {
+    font-size: 8px;
+    letter-spacing: 0.6px;
+  }
+
+  .navbar-search {
+    grid-area: search;
+
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: 40px;
+    margin: 0;
+  }
+
+  .navbar-search input {
+    min-width: 0;
+    font-size: 12px;
+  }
+
+  .search-shortcut {
+    display: none;
+  }
+
+  .navbar-actions {
+    grid-area: actions;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: auto;
+    min-width: 0;
+    margin-left: 0;
+    gap: 3px;
+  }
+
+  .navbar-actions > .navbar-icon-btn {
+    width: 34px;
+    height: 36px;
+  }
+
+  .navbar-actions > .navbar-icon-btn:nth-child(2),
+  .navbar-actions > .navbar-icon-btn:nth-child(3),
+  .navbar-divider,
+  .theme-toggle {
+    display: none;
+  }
+
+  .navbar-profile {
+    margin: 0;
+    padding: 2px;
+  }
+
+  .profile-avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .profile-info,
+  .profile-chevron {
+    display: none;
+  }
+
+  /* Main layout */
+
+  .hospital-body {
+    position: relative;
+    display: block;
+    min-height: calc(100vh - 110px);
+  }
+
+  /* Mobile sidebar drawer */
+
+  .hospital-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1202;
+
+    display: flex;
+    flex-direction: column;
+
+    width: min(290px, 85vw);
+    min-width: 0;
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    padding: 130px 12px 20px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background: #ffffff;
+    border-right: 1px solid var(--line);
+    box-shadow: 8px 0 30px rgba(15, 76, 107, 0.12);
+
+    transform: translateX(-105%);
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+      transform 0.25s ease,
+      visibility 0.25s ease;
+  }
+
+  /* Open sidebar when MainLayout has sidebar-open */
+
+  .hospital-layout.sidebar-open .hospital-sidebar {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Restore menu labels inside the drawer */
+
+  .hospital-sidebar .sidebar-heading,
+  .hospital-sidebar .sidebar-link-label,
+  .hospital-sidebar .sidebar-bottom,
+  .hospital-sidebar .sidebar-arrow {
+    display: initial;
+  }
+
+  .hospital-sidebar .sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .hospital-sidebar .sidebar-link {
+    justify-content: flex-start;
+    gap: 12px;
+    min-height: 46px;
+    padding: 10px 12px;
+  }
+
+  .hospital-sidebar .sidebar-icon-wrap {
+    display: flex;
+  }
+
+  .hospital-sidebar .sidebar-bottom {
+    display: block;
+    margin-top: auto;
+    padding-top: 20px;
+  }
+
+  .hospital-sidebar .sidebar-arrow {
+    display: initial;
+  }
+
+  /* Drawer backdrop */
+
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1201;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    background: rgba(7, 27, 51, 0.42);
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+  }
+
+  /* Main content */
+
+  .hospital-content {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 22px 18px;
+  }
+}
+
+/* =========================================
+   SMALL PHONES: 480px AND BELOW
+   ========================================= */
+
+@media (max-width: 480px) {
+  .hospital-navbar {
+    padding: 10px 12px;
+    gap: 9px;
+  }
+
+  .navbar-left {
+    gap: 7px;
+  }
+
+  .navbar-menu-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .hospital-brand-area {
+    gap: 7px;
+  }
+
+  .hospital-brand-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hospital-brand-icon > i {
+    font-size: 19px;
+  }
+
+  .hospital-brand-text h5 {
+    font-size: 12px;
+  }
+
+  .hospital-brand-text span {
+    font-size: 7px;
+    letter-spacing: 0.4px;
+  }
+
+  .navbar-actions {
+    gap: 0;
+  }
+
+  .navbar-actions > .navbar-icon-btn {
+    width: 31px;
+    height: 34px;
+  }
+
+  .profile-avatar {
+    width: 31px;
+    height: 31px;
+  }
+
+  .navbar-search {
+    height: 38px;
+    padding: 0 10px;
+    gap: 8px;
+  }
+
+  .navbar-search input {
+    font-size: 11px;
+  }
+
+  .hospital-sidebar {
+    width: min(280px, 88vw);
+    padding-top: 120px;
+  }
+
+  .hospital-content {
+    padding: 18px 12px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar-icon-btn,
+  .navbar-search,
+  .navbar-profile,
+  .hospital-sidebar,
+  .sidebar-link,
+  .sidebar-icon,
+  .sidebar-arrow,
+  .sidebar-support-btn {
+    scroll-behavior: auto;
+    animation: none;
+    transition: none;
+  }
+}
